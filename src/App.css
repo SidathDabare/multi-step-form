@@ -1,4 +1,20 @@
 /** @format */
+:root {
+  --Marine-blue: hsl(213, 96%, 18%);
+  --Purplish-blue: hsl(243, 100%, 62%);
+  --Pastel-blue: hsl(228, 100%, 84%);
+  --Light-blue: hsl(206, 94%, 87%);
+  --Strawberry-red: hsl(354, 84%, 57%);
+
+  --Cool-gray: hsl(231, 11%, 63%);
+  --Light-gray: hsl(229, 24%, 87%);
+  --Magnolia: hsl(217, 100%, 97%);
+  --Alabaster: hsl(231, 100%, 99%);
+  --White: hsl(0, 0%, 100%);
+
+  --paragraph-fontSize: 16px;
+  --paragraph-fontSize-sm: 14px;
+}
 * {
   margin: 0;
   padding: 0;
@@ -7,4 +23,24 @@
 }
 body {
   padding: 0;
+}
+
+.active {
+  background-color: var(--Light-blue);
+  color: var(--Marine-blue) !important;
+}
+.normal-font {
+  font-size: var(--paragraph-fontSize) !important;
+}
+.small-font {
+  font-size: var(--paragraph-fontSize-sm) !important;
+}
+.font-color-marina-blue {
+  color: var(--Marine-blue) !important;
+}
+.font-color-purplish-blue {
+  color: var(--Purplish-blue) !important;
+}
+.font-color-gray {
+  color: var(--Cool-gray) !important;
 }

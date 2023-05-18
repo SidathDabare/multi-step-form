@@ -1,0 +1,13 @@
+/** @format */
+.form-controller-div {
+  width: 100%;
+  height: 92%;
+}
+.form-controller-header {
+  height: 23%;
+}
+.form-controller-header h2 {
+  color: var(--Marine-blue);
+}
+.form-controller-content {
+}

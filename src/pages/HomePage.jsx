@@ -6,6 +6,8 @@ import PersonalInfo from "../components/PersonalInfo"
 import SelectPlan from "../components/SelectPlan"
 import AddOns from "../components/AddOns"
 import Summary from "../components/Summary"
+import "./HomePage.css"
+import { stepsArr } from "../data"
 
 const initialData = {
   name: "",
@@ -42,42 +44,57 @@ const HomePage = () => {
     <AddOns {...data} updateFields={updateFields} />,
     <Summary {...data} />,
   ])
-
-  function onSubmit(e) {
+  console.log(steps)
+  const onSubmit = (e) => {
     e.preventDefault()
     if (!isLastStep) return nextStep()
     alert("Successful Account Creation")
   }
   return (
-    <div
-      style={{
-        position: "relative",
-        background: "white",
-        border: "1px solid black",
-        padding: "2rem",
-        margin: "1rem",
-        borderRadius: ".5rem",
-        fontFamily: "Arial",
-        maxWidth: "max-content",
-      }}>
-      <form onSubmit={onSubmit}>
-        <div style={{ position: "absolute", top: ".5rem", right: ".5rem" }}>
-          {currentStepIndex + 1} / {steps.length}
+    <div className='home-page-container'>
+      <form onSubmit={onSubmit} className='main-form'>
+        <div className='form-left-container'>
+          {/* {currentStepIndex + 1} */}
+          <div className='form-left-container-div'>
+            <div className='mt-4'>
+              {stepsArr.map((step, index) => (
+                <div key={index} className='d-flex step-container'>
+                  <div className='col-3 step-container-left'>
+                    <div
+                      className={
+                        index === currentStepIndex ? "active fw-bold" : ""
+                      }>
+                      {index + 1}
+                    </div>
+                  </div>
+                  <div className='col-9 step-container-right'>
+                    <p>{step.name}</p>
+                    <p>{step.title}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        {step}
-        <div
-          style={{
-            marginTop: "1rem",
-            display: "flex",
-            gap: ".5rem",
-            justifyContent: "flex-end",
-          }}>
-          {!isFirstStep && (
-            <button type='button' onClick={prevStep}>
-              Back
-            </button>
-          )}
-          <button type='submit'>{isLastStep ? "Finish" : "Next"}</button>
+        <div className='form-right-container '>
+          <div className='form-right-container-content'>
+            <div className='form-right-container-top'>{step}</div>
+            <div
+              className={
+                isFirstStep
+                  ? "form-right-container-bottom-1st"
+                  : "form-right-container-bottom"
+              }>
+              {!isFirstStep && (
+                <button className='back-btn' type='button' onClick={prevStep}>
+                  Go Back
+                </button>
+              )}
+              <button className='next-btn' type='submit'>
+                {isLastStep ? "Finish" : "Next Step"}
+              </button>
+            </div>
+          </div>
         </div>
       </form>
     </div>

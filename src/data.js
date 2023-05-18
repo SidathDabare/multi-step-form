@@ -1,5 +1,10 @@
 /** @format */
-
+export const stepsArr = [
+  { name: "STEP 1", id: 1, title: "YOUR INFO" },
+  { name: "STEP 2", id: 2, title: "SELECT PLAN" },
+  { name: "STEP 3", id: 3, title: "ADD-ONS" },
+  { name: "STEP 4", id: 4, title: "SUMMERY" },
+]
 export const plansArr = [
   {
     id: 1,

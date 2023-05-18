@@ -1,19 +1,17 @@
 /** @format */
 
 import React from "react"
+import "./FormControler.css"
 
 const FormControler = ({ title, subTitle, children }) => {
   return (
-    <>
-      <h2 style={{ textAlign: "center", margin: 0, marginBottom: "2rem" }}>
-        {title}
-      </h2>
-      <br />
-      <small style={{ textAlign: "center", margin: 0, marginBottom: "2rem" }}>
-        {subTitle}
-      </small>
-      <div className='flex-column d-flex'>{children}</div>
-    </>
+    <div className='form-controller-div'>
+      <div className='form-controller-header'>
+        <h4 className='mb-0'>{title}</h4>
+        <small className='font-color-gray'>{subTitle}</small>
+      </div>
+      <div className='form-controller-content'>{children}</div>
+    </div>
   )
 }
 
