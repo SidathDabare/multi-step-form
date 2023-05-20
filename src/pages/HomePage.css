@@ -194,10 +194,11 @@
     background-color: var(--Light-gray);
   }
   .form-right-container-content {
+    margin-top: -200px !important;
     width: 90%;
     min-height: 50vh;
     height: auto;
-    margin-top: -35vh;
+
     border-radius: 10px;
     padding: 25px 15px 15px 15px;
   }

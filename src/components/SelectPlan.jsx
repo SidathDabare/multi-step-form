@@ -4,11 +4,11 @@ import FormControler from "../customComponent/FormControler"
 import { plansArr } from "../data"
 import Form from "react-bootstrap/Form"
 import "./SelectPlan.css"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 
 const SelectPlan = (props) => {
   //function to default the plan to the first plan in the array
-  const [updatePrice, setUpdatePrice] = useState(0)
+
   const defaultPlan = () => {
     if (props.plans.name === "") {
       props.updateFields({ plans: plansArr[0] })
@@ -18,17 +18,6 @@ const SelectPlan = (props) => {
     }
   }
 
-  // const calculatePrice = (plan) => {
-  //   if (props.setAnually) {
-  //     if (props.setOffer) {
-  //       return `$${plan.priceMonthly * 12 - plan.priceMonthly * 2} /yr`
-  //     } else {
-  //       return `$${plan.priceMonthly * 12} /yr`
-  //     }
-  //   } else {
-  //     return `$${plan.priceMonthly} /mo`
-  //   }
-  // }
   const setSelectedPlanPrice = (plan) => {
     if (props.setAnually) {
       if (props.setOffer) {
@@ -45,17 +34,11 @@ const SelectPlan = (props) => {
         selectedPlanPrice: plan.priceMonthly,
       })
     }
-
-    // if (props.setAnually) {
-    //   return plan.priceMonthly * 12 - plan.priceMonthly * 2
-    // } else {
-    //   return plan.priceMonthly
-    // }
   }
 
   useEffect(() => {
     defaultPlan()
-    // setSelectedPlanPrice(props.plans)
+
     setSelectedPlanPrice(props.plans)
     console.log(props)
   }, [props.setAnually, props.plans, props.setOffer, props.selectedPlanPrice])

@@ -62,3 +62,27 @@
 .form-check-input:checked {
   background-color: var(--Marine-blue) !important;
 }
+@media only screen and (max-width: 375px) {
+  .select-plan-top {
+    flex-direction: column;
+    align-items: center;
+  }
+  .select-item {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    height: auto;
+    width: 100%;
+    padding: 3px 8px;
+    margin: 0 0 6px 0;
+  }
+  .select-item div:nth-child(1) {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .select-item div:nth-child(2) {
+    width: 75%;
+  }
+}
