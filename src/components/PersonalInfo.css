@@ -1,0 +1,28 @@
+/** @format */
+
+.semi-bold {
+  font-weight: 500 !important;
+}
+.personal-info-input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--Cool-gray);
+  border-radius: 5px;
+  padding: 10px 10px;
+  margin: 3px 0;
+  font-size: var(--paragraph-fontSize-sm);
+  font-weight: 500;
+}
+.personal-info-input:focus {
+  border: 1px solid var(--Marine-blue);
+  outline: none;
+}
+/* .personal-info-input:invalid {
+  border: 5px solid var(--Marine-blue);
+  outline: none;
+} */
+@media screen and (max-width: 768px) {
+  .form-container {
+    padding: 5px 0;
+  }
+}

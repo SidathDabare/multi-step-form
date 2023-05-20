@@ -8,6 +8,8 @@ import AddOns from "../components/AddOns"
 import Summary from "../components/Summary"
 import "./HomePage.css"
 import { stepsArr } from "../data"
+import { Form } from "react-bootstrap"
+import { useForm } from "react-hook-form"
 
 const initialData = {
   name: "",
@@ -19,6 +21,8 @@ const initialData = {
   },
   setAnually: false,
   setOffer: false,
+  isError: false,
+  selectedPlanPrice: 0,
   addOns: [],
 }
 const HomePage = () => {
@@ -29,7 +33,8 @@ const HomePage = () => {
       return { ...prev, ...fields }
     })
   }
-
+  const formValidation = useForm()
+  // console.log(formValidation)
   const {
     steps,
     currentStepIndex,
@@ -39,20 +44,32 @@ const HomePage = () => {
     nextStep,
     prevStep,
   } = StepController([
-    <PersonalInfo {...data} updateFields={updateFields} />,
+    <PersonalInfo
+      {...data}
+      updateFields={updateFields}
+      formValidation={formValidation}
+    />,
     <SelectPlan {...data} updateFields={updateFields} />,
     <AddOns {...data} updateFields={updateFields} />,
     <Summary {...data} />,
   ])
-  console.log(steps)
-  const onSubmit = (e) => {
-    e.preventDefault()
+
+  const onSubmit = (data) => {
+    updateFields({
+      name: data.name,
+      email: data.email,
+      phoneNumber: data.phoneNumber,
+    })
     if (!isLastStep) return nextStep()
-    alert("Successful Account Creation")
+    //   alert("Successful Account Creation")
   }
+
   return (
     <div className='home-page-container'>
-      <form onSubmit={onSubmit} className='main-form'>
+      <Form
+        onSubmit={formValidation.handleSubmit((data) => onSubmit(data))}
+        className='main-form'
+        noValidate>
         <div className='form-left-container'>
           {/* {currentStepIndex + 1} */}
           <div className='form-left-container-div'>
@@ -76,7 +93,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className='form-right-container '>
+        <div className='form-right-container'>
           <div className='form-right-container-content'>
             <div className='form-right-container-top'>{step}</div>
             <div
@@ -86,17 +103,20 @@ const HomePage = () => {
                   : "form-right-container-bottom"
               }>
               {!isFirstStep && (
-                <button className='back-btn' type='button' onClick={prevStep}>
+                <button
+                  className='back-btn small-font'
+                  type='button'
+                  onClick={prevStep}>
                   Go Back
                 </button>
               )}
-              <button className='next-btn' type='submit'>
+              <button className='next-btn small-font' type='submit'>
                 {isLastStep ? "Finish" : "Next Step"}
               </button>
             </div>
           </div>
         </div>
-      </form>
+      </Form>
     </div>
   )
 }

@@ -1,0 +1,64 @@
+/** @format */
+
+.select-plan-top {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.select-item {
+  width: 30%;
+  min-height: 150px;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--Cool-gray);
+  cursor: pointer;
+  padding: 17px 13px;
+}
+.select-item:hover {
+  border: 1px solid var(--Purplish-blue);
+}
+.select-item-active {
+  background-color: var(--Light-gray);
+  border: 1px solid var(--Purplish-blue);
+}
+.select-item-img-div {
+  height: 75px;
+}
+.select-item-content {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.select-item-content small {
+  color: var(--Marine-blue);
+}
+.select-item-content small:nth-child(2) {
+  color: var(--Cool-gray);
+  font-size: var(--paragraph-fontSize-sm);
+}
+.select-item-content small:nth-child(3) {
+  color: var(--Marine-blue);
+  font-size: 12px;
+  font-weight: 400;
+}
+.select-plan-bottom {
+  width: 100%;
+  background-color: var(--Light-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 25px 0 0 0;
+  padding: 8px 0;
+}
+.select-plan-bottom small {
+  color: var(--Marine-blue);
+  font-weight: 500;
+}
+.switch-btn {
+  margin: 0 15px;
+}
+.form-check-input:checked {
+  background-color: var(--Marine-blue) !important;
+}

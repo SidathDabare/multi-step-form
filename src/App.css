@@ -12,8 +12,8 @@
   --Alabaster: hsl(231, 100%, 99%);
   --White: hsl(0, 0%, 100%);
 
-  --paragraph-fontSize: 16px;
-  --paragraph-fontSize-sm: 14px;
+  --paragraph-fontSize: 16px !important;
+  --paragraph-fontSize-sm: 14px !important;
 }
 * {
   margin: 0;

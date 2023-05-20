@@ -1,37 +1,33 @@
 /** @format */
-:root {
-  --Marine-blue: hsl(213, 96%, 18%);
-  --Purplish-blue: hsl(243, 100%, 62%);
-  --Pastel-blue: hsl(228, 100%, 84%);
-  --Light-blue: hsl(206, 94%, 87%);
-  --Strawberry-red: hsl(354, 84%, 57%);
 
-  --Cool-gray: hsl(231, 11%, 63%);
-  --Light-gray: hsl(229, 24%, 87%);
-  --Magnolia: hsl(217, 100%, 97%);
-  --Alabaster: hsl(231, 100%, 99%);
-  --White: hsl(0, 0%, 100%);
-
-  --paragraph-fontSize: 16px;
-  --paragraph-fontSize-sm: 14px;
-}
 .home-page-container {
+  position: relative;
   height: 100vh;
   width: 100%;
-  background-color: var(--Light-blue);
+  background-color: var(--Light-gray);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .main-form {
-  width: 55%;
+  position: relative;
+  width: 55% !important;
   height: 75vh;
   margin: 0 auto;
   background-color: var(--Alabaster);
   display: flex;
   border-radius: 10px;
 }
+/* .home-page-container {
+  width: 55% !important;
+  height: 75vh;
+  margin: 0 auto;
+  background-color: var(--Alabaster);
+  display: flex;
+  border-radius: 10px;
+} */
 .form-left-container {
+  position: relative;
   width: 30%;
   display: flex;
   justify-content: center;
@@ -44,6 +40,7 @@
   border-radius: 10px;
   background: url("../assets/images/bg-sidebar-desktop.svg");
   background-size: cover;
+  background-repeat: no-repeat;
 }
 .step-container {
   padding: 12px 18px;
@@ -55,6 +52,7 @@
 }
 .step-container-left div {
   width: 30px;
+  min-width: 30px;
   height: 30px;
   border-radius: 50%;
   display: flex;
@@ -63,10 +61,14 @@
   border: 1px solid var(--White);
   color: var(--White);
 }
+.step-container-right {
+  padding-left: 5px;
+}
 .step-container-right p {
   margin: -2px;
 }
 .form-right-container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,26 +76,33 @@
 .form-right-container-content {
   width: 75%;
   height: 96%;
+  background-color: var(--White);
 }
 .form-right-container-top {
+  position: relative;
   height: 80%;
   display: flex;
   justify-content: center;
   align-items: end;
+  background-color: var(--White);
 }
 .form-right-container-bottom-1st {
   height: 16%;
+  width: 100%;
   display: flex;
   justify-content: end;
   align-items: end;
+  background-color: var(--White);
 }
 .form-right-container-bottom {
   height: 16%;
   display: flex;
   justify-content: space-between;
   align-items: end;
+  background-color: var(--White);
 }
 .form-right-container-bottom {
+  position: relative;
   height: 16%;
   display: flex;
   justify-content: space-between;
@@ -133,4 +142,91 @@
   border: none;
   outline: none;
   cursor: pointer;
+}
+@media only screen and (max-width: 1100px) {
+  .main-form {
+    min-width: 90%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .main-form {
+    flex-direction: column;
+    width: 100% !important;
+    height: 100vh;
+  }
+  .form-left-container {
+    min-width: 100%;
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-left-container-div {
+    background: url("../assets/images/bg-sidebar-mobile.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-width: 100%;
+    max-width: 100%;
+    height: 100%;
+    border-radius: 0 0 0 0 !important;
+  }
+  .form-left-container-div div {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+  .step-container {
+    padding: 10px 8px;
+  }
+  .step-container-left {
+    width: 100%;
+  }
+  .step-container-right {
+    display: none !important;
+  }
+  .form-right-container {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 0 0 !important;
+    background-color: var(--Light-gray);
+  }
+  .form-right-container-content {
+    width: 90%;
+    min-height: 50vh;
+    height: auto;
+    margin-top: -35vh;
+    border-radius: 10px;
+    padding: 25px 15px 15px 15px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .main-form {
+    min-width: 100% !important;
+  }
+  .form-right-container-bottom {
+    position: absolute !important;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+  }
+  .form-right-container-bottom-1st {
+    position: absolute !important;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 0 12px;
+  }
+
+  .next-btn {
+    border-radius: 3px;
+  }
 }
