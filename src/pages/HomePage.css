@@ -201,6 +201,9 @@
     border-radius: 10px;
     padding: 25px 15px 15px 15px;
   }
+  .form-right-container-bottom {
+    padding: 15px 0;
+  }
 }
 @media only screen and (max-width: 375px) {
   .main-form {
