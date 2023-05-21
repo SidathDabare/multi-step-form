@@ -8,7 +8,7 @@ const PersonalInfo = (props) => {
   return (
     <FormControler
       title='Personal Info'
-      subTitle='Please provide your name, email address, and phone number'>
+      subTitle='Please provide your name, email address, and phone number.'>
       <div className='col-12 '>
         <Form.Group className='mb-3 form-container'>
           <small className='small-font d-flex justify-content-between semi-bold'>

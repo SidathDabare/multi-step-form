@@ -1,0 +1,9 @@
+/** @format */
+
+.finishing-section1 {
+  background-color: var(--Magnolia);
+  border-bottom: 0.5px solid var(--Light-gray);
+}
+.finishing-section2 {
+  background-color: var(--Magnolia);
+}

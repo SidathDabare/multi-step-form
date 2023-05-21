@@ -33,15 +33,18 @@ export const addOnsArr = [
     id: 1,
     name: "Online service",
     priceMonthly: 1,
+    type: "Access to multiplayer games",
   },
   {
     id: 2,
     name: "Large storage",
     priceMonthly: 2,
+    type: "Extra 1TB of cloud save",
   },
   {
     id: 3,
     name: "Customizable Profile",
     priceMonthly: 2,
+    type: "Customize theme on your profile",
   },
 ]

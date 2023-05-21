@@ -10,6 +10,7 @@ import "./HomePage.css"
 import { stepsArr } from "../data"
 import { Form } from "react-bootstrap"
 import { useForm } from "react-hook-form"
+import Confirm from "../components/Confirm"
 
 const initialData = {
   name: "",
@@ -23,6 +24,7 @@ const initialData = {
   setOffer: false,
   isError: false,
   selectedPlanPrice: 0,
+  selectedAddOnPrice: 0,
   addOns: [],
 }
 const HomePage = () => {
@@ -33,6 +35,9 @@ const HomePage = () => {
       return { ...prev, ...fields }
     })
   }
+  const goToFirstStep = () => {
+    goTo(0)
+  }
   const formValidation = useForm()
   // console.log(formValidation)
   const {
@@ -41,6 +46,7 @@ const HomePage = () => {
     step,
     isFirstStep,
     isLastStep,
+    goTo,
     nextStep,
     prevStep,
   } = StepController([
@@ -51,8 +57,14 @@ const HomePage = () => {
     />,
     <SelectPlan {...data} updateFields={updateFields} />,
     <AddOns {...data} updateFields={updateFields} />,
-    <Summary {...data} />,
+    <Summary {...data} goToFirstStep={goToFirstStep} />,
+    <Confirm />,
   ])
+  const goToConfirm = () => {
+    if (isLastStep) {
+      return nextStep
+    }
+  }
 
   const onSubmit = (data) => {
     updateFields({
@@ -96,24 +108,38 @@ const HomePage = () => {
         <div className='form-right-container'>
           <div className='form-right-container-content'>
             <div className='form-right-container-top'>{step}</div>
-            <div
-              className={
-                isFirstStep
-                  ? "form-right-container-bottom-1st"
-                  : "form-right-container-bottom"
-              }>
-              {!isFirstStep && (
+
+            {currentStepIndex === steps.length - 1 ? (
+              ""
+            ) : (
+              <div
+                className={
+                  isFirstStep
+                    ? "form-right-container-bottom-1st"
+                    : "form-right-container-bottom"
+                }>
+                {!isFirstStep && (
+                  <button
+                    className='back-btn small-font'
+                    type='button'
+                    onClick={prevStep}>
+                    Go Back
+                  </button>
+                )}
                 <button
-                  className='back-btn small-font'
-                  type='button'
-                  onClick={prevStep}>
-                  Go Back
+                  onClick={goToConfirm()}
+                  className={
+                    currentStepIndex === steps.length - 2
+                      ? "confirm-btn small-font"
+                      : "next-btn small-font"
+                  }
+                  type='submit'>
+                  {currentStepIndex === steps.length - 2
+                    ? "Confirm"
+                    : "Next Step"}
                 </button>
-              )}
-              <button className='next-btn small-font' type='submit'>
-                {isLastStep ? "Finish" : "Next Step"}
-              </button>
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </Form>

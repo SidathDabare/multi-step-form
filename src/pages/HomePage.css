@@ -12,9 +12,10 @@
 .main-form {
   position: relative;
   width: 55% !important;
+  min-width: 800px;
   height: 75vh;
   margin: 0 auto;
-  background-color: var(--Alabaster);
+  background-color: var(--White);
   display: flex;
   border-radius: 10px;
 }
@@ -22,7 +23,7 @@
   width: 55% !important;
   height: 75vh;
   margin: 0 auto;
-  background-color: var(--Alabaster);
+  background-color: var(--White);
   display: flex;
   border-radius: 10px;
 } */
@@ -143,6 +144,15 @@
   outline: none;
   cursor: pointer;
 }
+.confirm-btn {
+  background-color: var(--Purplish-blue);
+  color: var(--White);
+  border-radius: 8px;
+  padding: 8px 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
 @media only screen and (max-width: 1100px) {
   .main-form {
     min-width: 90%;
@@ -195,10 +205,9 @@
   }
   .form-right-container-content {
     margin-top: -200px !important;
-    width: 90%;
+    width: 80%;
     min-height: 50vh;
     height: auto;
-
     border-radius: 10px;
     padding: 25px 15px 15px 15px;
   }
@@ -229,8 +238,13 @@
     align-items: center;
     padding: 0 12px;
   }
-
+  .form-right-container-content {
+    width: 90% !important;
+  }
   .next-btn {
+    border-radius: 3px;
+  }
+  .confirm-btn {
     border-radius: 3px;
   }
 }

@@ -35,17 +35,61 @@ const SelectPlan = (props) => {
       })
     }
   }
-
+  const incrementAddOnsPrice = () => {
+    if (props.setAnually) {
+      props.addOns.forEach((addOn) => {
+        props.updateFields({
+          selectedAddOnPrice:
+            props.selectedAddOnPrice +
+            addOn.priceMonthly * 12 -
+            addOn.priceMonthly * 2,
+        })
+      })
+    } else {
+      props.addOns.forEach((addOn) => {
+        props.updateFields({
+          selectedAddOnPrice: props.selectedAddOnPrice + addOn.priceMonthly,
+        })
+      })
+    }
+  }
+  const decrementAddOnsPrice = () => {
+    if (props.setAnually) {
+      props.addOns.forEach((addOn) => {
+        props.updateFields({
+          selectedAddOnPrice:
+            props.selectedAddOnPrice -
+            addOn.priceMonthly * 12 +
+            addOn.priceMonthly * 2,
+        })
+      })
+    } else {
+      props.addOns.forEach((addOn) => {
+        props.updateFields({
+          selectedAddOnPrice: props.selectedAddOnPrice - addOn.priceMonthly,
+        })
+      })
+    }
+  }
+  const handleItemChange = (e) => {
+    if (e.target.checked) {
+      incrementAddOnsPrice()
+    } else {
+      decrementAddOnsPrice()
+    }
+  }
   useEffect(() => {
     defaultPlan()
-
     setSelectedPlanPrice(props.plans)
+    props.updateFields({
+      selectedAddOnPrice: 0,
+    })
     console.log(props)
   }, [props.setAnually, props.plans, props.setOffer, props.selectedPlanPrice])
   return (
     <FormControler
       title='Select your plan'
-      subTitle='You have the option of monthly or yearly billing'>
+      subTitle='You have the option of monthly or yearly billing.'>
       <div className='select-plan-top'>
         {plansArr.map((plan) => (
           <div
@@ -94,6 +138,7 @@ const SelectPlan = (props) => {
             props.updateFields({ setAnually: !props.setAnually })
             props.updateFields({ setOffer: !props.setOffer })
             setSelectedPlanPrice(props.plans)
+            handleItemChange(e)
           }}
         />
 
