@@ -215,7 +215,7 @@
     padding: 15px 0;
   }
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 376px) {
   .main-form {
     min-width: 100% !important;
   }
