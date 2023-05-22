@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/multi-step-form/static/css/main.ee6784ad.css",
+    "main.css": "/multi-step-form/static/css/main.4f66e748.css",
     "main.js": "/multi-step-form/static/js/main.ce0b31da.js",
     "static/media/bg-sidebar-desktop.svg": "/multi-step-form/static/media/bg-sidebar-desktop.6918153f38678372ceb1.svg",
     "static/media/bg-sidebar-mobile.svg": "/multi-step-form/static/media/bg-sidebar-mobile.ad41661b40ca0b967f3a.svg",
@@ -9,11 +9,11 @@
     "static/media/icon-thank-you.svg": "/multi-step-form/static/media/icon-thank-you.ee753f231cc5a5789b8eb922a96472c0.svg",
     "static/media/icon-pro.svg": "/multi-step-form/static/media/icon-pro.2e7e377da9c658d608624304a0f8dae6.svg",
     "static/media/icon-arcade.svg": "/multi-step-form/static/media/icon-arcade.a08c098289a31bb2f66d675be71565b3.svg",
-    "main.ee6784ad.css.map": "/multi-step-form/static/css/main.ee6784ad.css.map",
+    "main.4f66e748.css.map": "/multi-step-form/static/css/main.4f66e748.css.map",
     "main.ce0b31da.js.map": "/multi-step-form/static/js/main.ce0b31da.js.map"
   },
   "entrypoints": [
-    "static/css/main.ee6784ad.css",
+    "static/css/main.4f66e748.css",
     "static/js/main.ce0b31da.js"
   ]
 }
