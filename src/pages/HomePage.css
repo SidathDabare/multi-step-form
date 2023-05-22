@@ -4,14 +4,14 @@
   position: relative;
   height: 100vh;
   width: 100%;
-  background-color: var(--Light-gray);
+  background-color: var(--Magnolia);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .main-form {
   position: relative;
-  width: 55% !important;
+  width: 65% !important;
   min-width: 800px;
   height: 75vh;
   margin: 0 auto;
@@ -201,7 +201,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 0 0 0 0 !important;
-    background-color: var(--Light-gray);
+    background-color: var(--Magnolia);
   }
   .form-right-container-content {
     margin-top: -200px !important;
